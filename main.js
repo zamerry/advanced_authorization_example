@@ -1,5 +1,4 @@
 import express from 'express'
-import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import dotenv from "dotenv";
 
@@ -15,7 +14,6 @@ app.use(express.json())
 
 app.use(cookieParser())
 app.use('/auth', router)
-app.use(cors())
 app.use(errorMiddleware)
 
 app.listen(port, () => {
