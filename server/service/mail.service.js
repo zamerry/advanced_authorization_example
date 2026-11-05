@@ -11,8 +11,8 @@ class MailService {
             port: 587,
             secure: false,
             auth: {
-                user: "zumabekovtamerlan11@gmail.com",
-                pass: "sikj vvjh lcip nudc"
+                user: process.env.mail_email,
+                pass: process.env.mail_pass
             }
     })
     }
@@ -20,7 +20,7 @@ class MailService {
 
     async sendActivationMail(to, link) {
         await this.transport.sendMail({
-            from: "zumabekovtamerlan11@gmail.com",
+            from: process.env.mail_email,
             to,
             subject: "активация аккаунта на " + process.env.api_url,
             text: '',
